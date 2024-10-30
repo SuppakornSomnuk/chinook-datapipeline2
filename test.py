@@ -34,11 +34,11 @@ else:
     f.write("Case 1: Fail\n")
 
 # Case 2
-# mergedTracks = pd.merge(tracksInput, tracksOutput, on='TrackId', suffixes=('_input', '_output'))
-# if (mergedTracks['UnitPrice_output'] - mergedTracks['UnitPrice_input'] < 2).all():
-#     f.write("Case 2: Pass\n")
-# else:
-#     f.write("Case 2: Fail\n")
+mergedTracks = pd.merge(tracksInput, tracksOutput, on='TrackId', suffixes=('_input', '_output'))
+if (mergedTracks['UnitPrice_output']/33.77 <= mergedTracks['UnitPrice_input']).all():
+    f.write("Case 2: Pass\n")
+else:
+    f.write("Case 2: Fail\n")
 
 # close test result file
 f.close()
