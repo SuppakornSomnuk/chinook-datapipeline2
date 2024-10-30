@@ -20,6 +20,10 @@ tracks = pd.read_csv(inputPath)
 
 # Transform
 tracks["UnitPrice"] = tracks["UnitPrice"].apply(lambda x: math.ceil(x) + 1)
+
+# Transform
+tracks["UnitPrice"] = tracks["UnitPrice"].apply(lambda x: math.ceil(x * 36.5))
+
                              
 # Load
 tracks.to_csv(outputPath, index=False)
